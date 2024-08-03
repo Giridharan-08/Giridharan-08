@@ -1,0 +1,6 @@
+- 👋 Hi, I’m Giridharan
+- 👀 I’m interested in backend development
+- 🌱 I’m currently learning java in depth
+- 📫 How to reach me @giridharanvichu@gmail.com
+- 😄 Pronouns: He/Him
+- ⚡ Fun fact: I never went to college for degree 😉
