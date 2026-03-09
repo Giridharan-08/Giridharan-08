@@ -18,15 +18,15 @@ const RoomHero = () => {
       </div>
 
       {/* Content */}
-      <div className="relative z-20 text-center px-6 max-w-3xl">
+      <div className="relative z-20 text-center px-6 w-full max-w-none overflow-visible">
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.3 }}
-          className="text-5xl md:text-7xl lg:text-8xl font-bold text-foreground mb-6 text-glow-violet"
+          className="text-7xl md:text-9xl lg:text-[10rem] font-bold leading-none tracking-[0.02em] uppercase mb-6 text-glow-violet-strong text-transparent bg-clip-text bg-gradient-to-r from-primary via-accent to-primary"
           style={{ fontFamily: "var(--font-cinematic)" }}
         >
-          Giridharan
+          <span className="text-[1.2em] mr-1 align-baseline">G</span>IRIDHARAN
         </motion.h1>
         <motion.p
           initial={{ opacity: 0, y: 10 }}

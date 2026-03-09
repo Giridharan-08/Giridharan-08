@@ -42,8 +42,8 @@
     --room-wall: 260 30% 8%;
     --frame-border: 270 30% 30%;
 
-    --font-display: 'Space Grotesk', sans-serif;
-    --font-cinematic: 'Playfair Display', serif;
+    --font-display: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    --font-cinematic: 'Anton', sans-serif;
     --font-mono: 'JetBrains Mono', monospace;
 
     --sidebar-background: 260 30% 8%;
@@ -65,6 +65,8 @@
   body {
     @apply bg-background text-foreground;
     font-family: var(--font-display);
+    font-size: 17px;
+    line-height: 1.7;
     overflow-x: hidden;
   }
 
