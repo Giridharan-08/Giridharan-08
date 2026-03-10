@@ -22,11 +22,14 @@ const GlowFrame = ({ title, children, delay = 0, className = "" }: GlowFrameProp
       onMouseLeave={() => setIsHovered(false)}
     >
       <motion.h3
-        className="text-primary font-display text-lg md:text-2xl font-semibold uppercase tracking-[0.18em] mb-5 text-glow-violet"
-        animate={{ textShadow: isHovered ? "0 0 20px hsl(320 90% 60% / 0.6)" : "0 0 0px transparent" }}
+        className="text-primary font-display text-lg md:text-2xl font-black leading-none mb-5 uppercase"
+        style={{
+          fontFamily: "'Melody Variable', 'Melody', Impact, Haettenschweiler, 'Arial Black', 'Anton', sans-serif",
+        }}
+        animate={{ textShadow: isHovered ? "0 0 20px hsl(270 90% 65% / 0.6)" : "0 0 0px transparent" }}
         transition={{ duration: 0.4 }}
       >
-        {title}
+        <span className="text-[1.2em] align-baseline">{title.charAt(0)}</span>{title.slice(1)}
       </motion.h3>
       <motion.div
         animate={{ opacity: isHovered ? 1 : 0.8 }}

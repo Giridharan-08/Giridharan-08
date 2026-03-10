@@ -32,6 +32,7 @@ const contacts = [
 
 const ContactPanel = () => {
 	const [copiedLabel, setCopiedLabel] = useState<string | null>(null);
+	const [isHovered, setIsHovered] = useState(false);
 	const resetTimerRef = useRef<number | null>(null);
 
 	const handleCopy = async (value: string, label: string) => {
@@ -64,10 +65,18 @@ const ContactPanel = () => {
 			viewport={{ once: true }}
 			transition={{ duration: 0.8, delay: 0.3 }}
 			className="frame-glow rounded-lg p-6 md:p-8 bg-card/40 backdrop-blur-sm"
+			onMouseEnter={() => setIsHovered(true)}
+			onMouseLeave={() => setIsHovered(false)}
 		>
-			<h3 className="text-primary font-display text-lg md:text-2xl font-semibold uppercase tracking-[0.18em] mb-6 text-glow-violet">
-				Get in Touch
-			</h3>
+			<motion.h3 className="text-primary font-display text-lg md:text-2xl font-black leading-none mb-6 uppercase"
+				style={{
+					fontFamily: "'Melody Variable', 'Melody', Impact, Haettenschweiler, 'Arial Black', 'Anton', sans-serif",
+				}}
+				animate={{ textShadow: isHovered ? "0 0 20px hsl(270 90% 65% / 0.6)" : "0 0 0px transparent" }}
+				transition={{ duration: 0.4 }}
+			>
+				<span className="text-[1.2em] align-baseline">G</span>ET IN TOUCH
+			</motion.h3>
 			<div className="space-y-4">
 				{contacts.map((c, i) => {
 					const isEmail = c.href.startsWith("mailto:");
@@ -132,4 +141,3 @@ const ContactPanel = () => {
 };
 
 export default ContactPanel;
-

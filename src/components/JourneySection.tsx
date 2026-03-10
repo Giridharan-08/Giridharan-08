@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { ExternalLink } from "lucide-react";
+import { useState } from "react";
 
 const milestones = [
 	{
@@ -35,6 +36,8 @@ const milestones = [
 ];
 
 const JourneySection = () => {
+	const [isHovered, setIsHovered] = useState(false);
+
 	return (
 		<motion.div
 			initial={{ opacity: 0, y: 30 }}
@@ -42,10 +45,20 @@ const JourneySection = () => {
 			viewport={{ once: true, margin: "-50px" }}
 			transition={{ duration: 0.8, delay: 0.15 }}
 			className="frame-glow rounded-lg p-6 md:p-8 bg-card/40 backdrop-blur-sm"
+			onMouseEnter={() => setIsHovered(true)}
+			onMouseLeave={() => setIsHovered(false)}
 		>
-			<h3 className="text-primary font-display text-lg md:text-2xl font-semibold uppercase tracking-[0.18em] mb-6 text-glow-violet">
-				The Journey
-			</h3>
+			<motion.h3
+				className="text-primary font-display text-lg md:text-2xl font-black leading-none mb-6 uppercase"
+				style={{
+					fontFamily:
+						"'Melody Variable', 'Melody', Impact, Haettenschweiler, 'Arial Black', 'Anton', sans-serif",
+				}}
+				animate={{ textShadow: isHovered ? "0 0 20px hsl(270 90% 65% / 0.6)" : "0 0 0px transparent" }}
+				transition={{ duration: 0.4 }}
+			>
+				<span className="text-[1.2em] align-baseline">T</span>HE JOURNEY
+			</motion.h3>
 
 			<div className="relative pl-6 border-l border-border">
 				{milestones.map((m, i) => (

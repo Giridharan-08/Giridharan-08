@@ -23,10 +23,12 @@ const RoomHero = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.3 }}
-          className="text-7xl md:text-9xl lg:text-[10rem] font-bold leading-none tracking-[0.02em] uppercase mb-6 text-glow-violet-strong text-transparent bg-clip-text bg-gradient-to-r from-primary via-accent to-primary"
-          style={{ fontFamily: "var(--font-cinematic)" }}
+          className="text-7xl md:text-9xl lg:text-[10rem] font-black leading-none uppercase mb-6 text-glow-violet-strong text-transparent bg-clip-text bg-gradient-to-r from-primary via-accent to-primary"
+          style={{
+            fontFamily: "'Melody Variable', 'Melody', Impact, Haettenschweiler, 'Arial Black', 'Anton', sans-serif",
+          }}
         >
-          <span className="text-[1.2em] mr-1 align-baseline">G</span>IRIDHARAN
+          <span className="text-[1.2em] align-baseline">G</span>IRIDHARAN
         </motion.h1>
         <motion.p
           initial={{ opacity: 0, y: 10 }}
@@ -34,7 +36,7 @@ const RoomHero = () => {
           transition={{ duration: 1, delay: 0.6 }}
           className="text-muted-foreground text-lg md:text-xl font-light tracking-wide"
         >
-          Backend Developer
+          - A Backend Dev
         </motion.p>
 
       </div>

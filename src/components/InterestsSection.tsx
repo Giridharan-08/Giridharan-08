@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
-import { Camera, Circle, UtensilsCrossed } from "lucide-react";
+import { Camera, UtensilsCrossed, Volleyball } from "lucide-react";
+import { useState } from "react";
 
 const interests = [
 	{
@@ -8,7 +9,7 @@ const interests = [
 		description: "Capturing small moments most people walk past.",
 	},
 	{
-		icon: Circle,
+		icon: Volleyball,
 		label: "Football",
 		description: "Where competition, discipline, and adrenaline meet.",
 	},
@@ -21,6 +22,8 @@ const interests = [
 ];
 
 const InterestsSection = () => {
+	const [isHovered, setIsHovered] = useState(false);
+
 	return (
 		<motion.div
 			initial={{ opacity: 0, y: 30 }}
@@ -28,10 +31,24 @@ const InterestsSection = () => {
 			viewport={{ once: true }}
 			transition={{ duration: 0.8, delay: 0.2 }}
 			className="frame-glow rounded-lg p-6 md:p-8 bg-card/40 backdrop-blur-sm"
+			onMouseEnter={() => setIsHovered(true)}
+			onMouseLeave={() => setIsHovered(false)}
 		>
-			<h3 className="text-primary font-display text-lg md:text-2xl font-semibold uppercase tracking-[0.18em] mb-6 text-glow-violet">
-				Beyond Code
-			</h3>
+			<motion.h3
+				className="text-primary font-display text-lg md:text-2xl font-black leading-none mb-6 uppercase"
+				style={{
+					fontFamily:
+						"'Melody Variable', 'Melody', Impact, Haettenschweiler, 'Arial Black', 'Anton', sans-serif",
+				}}
+				animate={{
+					textShadow: isHovered
+						? "0 0 20px hsl(270 90% 65% / 0.6)"
+						: "0 0 0px transparent",
+				}}
+				transition={{ duration: 0.4 }}
+			>
+				<span className="text-[1.2em] align-baseline">B</span>EYOND CODE
+			</motion.h3>
 			<div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
 				{interests.map((item, i) => (
 					<motion.div
