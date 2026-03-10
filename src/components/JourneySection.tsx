@@ -1,30 +1,36 @@
 import { motion } from "framer-motion";
+import { ExternalLink } from "lucide-react";
 
 const milestones = [
 	{
-		year: "2020",
+		year: "2020 March",
 		title: "10th Grade",
-		detail: "Scored 478/500",
+		detail: "Scored 95.6%",
+		resultUrl: "https://www.facebook.com/p/Elite-Matriculation-Higher-Secondary-School-100084051998971/",
 	},
 	{
-		year: "2022",
+		year: "2022 May",
 		title: "12th Grade — Computer Science",
-		detail: "Scored 542/600",
+		detail: "Scored 90.3%",
+		resultUrl: "https://www.facebook.com/p/Elite-Matriculation-Higher-Secondary-School-100084051998971/",
 	},
 	{
-		year: "2022",
-		title: "Joined Zoho Schools of Learning",
-		detail: "Cleared aptitude & math-based interviews (3 rounds)",
+		year: "2022 July",
+		title: "Zoho Schools of Learning, 1st Year",
+		detail: "3 Rounds of aptitude & math-based interviews",
+		resultUrl: "https://www.zohoschools.com/",
 	},
 	{
-		year: "2023",
-		title: "Placed in a Zoho Team",
+		year: "2023 April",
+		title: "Zoho Schools of Learning, 2nd Year",
 		detail: "Started working on live products after 1 year of training",
+		resultUrl: "https://www.zohoschools.com/",
 	},
 	{
-		year: "Jul 2024",
+		year: "2024 July",
 		title: "Member Technical Staff — Zoho",
 		detail: "Full-time role · Currently working here",
+		resultUrl: "https://en.wikipedia.org/wiki/Zoho_Corporation",
 	},
 ];
 
@@ -49,7 +55,7 @@ const JourneySection = () => {
 						whileInView={{ opacity: 1, x: 0 }}
 						viewport={{ once: true }}
 						transition={{ delay: 0.2 + i * 0.1 }}
-						className="mb-6 last:mb-0 relative"
+						className="group mb-6 last:mb-0 relative"
 					>
 						{/* dot */}
 						<div className="absolute -left-[calc(1.5rem+4.5px)] top-1.5 w-[9px] h-[9px] rounded-full bg-primary/60 border-2 border-background" />
@@ -59,9 +65,21 @@ const JourneySection = () => {
 						<p className="font-display font-medium text-foreground text-sm md:text-base mt-0.5">
 							{m.title}
 						</p>
-						<p className="text-muted-foreground text-sm mt-0.5">
-							{m.detail}
-						</p>
+						<div className="flex items-center gap-2 mt-0.5">
+							<p className="text-muted-foreground text-sm">{m.detail}</p>
+							{m.resultUrl ? (
+								<a
+									href={m.resultUrl}
+									target="_blank"
+									rel="noopener noreferrer"
+									className="opacity-0 group-hover:opacity-100 text-muted-foreground hover:text-primary transition-all duration-200"
+									aria-label={`Open result link for ${m.title}`}
+									title="Open result page"
+								>
+									<ExternalLink className="w-4 h-4" />
+								</a>
+							) : null}
+						</div>
 					</motion.div>
 				))}
 			</div>
