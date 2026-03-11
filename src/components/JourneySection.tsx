@@ -33,6 +33,12 @@ const milestones = [
 		detail: "Full-time role · Currently working here",
 		resultUrl: "https://en.wikipedia.org/wiki/Zoho_Corporation",
 	},
+	{
+		year: "2024 August",
+		title: "Started BCA Degree in Data Science (Correspondence)",
+		detail: "Currently pursuing alongside full-time work",
+		resultUrl: "https://www.srmonline.in/",
+	},
 ];
 
 const JourneySection = () => {
